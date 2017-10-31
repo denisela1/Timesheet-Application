@@ -187,6 +187,9 @@ def read_pattern():
                     match_notes = re.findall(search, v['Notes'])
                     if match_name or match_notes:
                         filtered.append(key)
+            if len(filtered) == 0:
+                print("Sorry, no entry found.\n")
+                break
             filtered_dictionary = dict(
                 (k, dictionary[k]) for k in filtered if k in dictionary)
             for v in filtered_dictionary.values():
